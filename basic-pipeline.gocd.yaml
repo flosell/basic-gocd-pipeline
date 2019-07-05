@@ -1,0 +1,17 @@
+format_version: 2
+pipelines:
+  demo-pipeline:
+    group: example
+    materials:
+      own-git:
+        git: https://github.com/flosell/basic-gocd-pipeline.git
+        branch: master
+    stages:
+      - first-stage:
+          jobs:
+            first-job:
+              tasks:
+                - exec:
+                    command: ls
+                    arguments:
+                      - .
